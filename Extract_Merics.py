@@ -326,10 +326,8 @@ RSI_13 = RSI_13[2::]
 # print(len(copy_candle_sticks[:, 0]), len(copy_PSAR_arr), len(copy_SMA_3), len(copy_SMA_5), len(copy_RSI_9), len(copy_RSI_13))
 
 # Construct a dataframe of the stock prices and indicators
-df = pd.DataFrame({'open': candle_sticks[:, 0], 'high': candle_sticks[:, 1], 'low': candle_sticks[:, 2], 'close': candle_sticks[:, 3], 'volume': candle_sticks[:, 4], 'PSAR': PSAR_arr, 'SMA_3': SMA_3, 'SMA_5': SMA_5, 'RSI_9': RSI_9, 'RSI_13': RSI_13
-    , 'prev_open': copy_candle_sticks[:, 0],'prev_high': copy_candle_sticks[:, 1], 'prev_low': copy_candle_sticks[:, 2], 'prev_close': copy_candle_sticks[:, 3], 'prev_volume': copy_candle_sticks[:, 4], 'prev_PSAR': copy_PSAR_arr, 'prev_SMA_3': copy_SMA_3, 'prev_SMA_5': copy_SMA_5, 'prev_RSI_9': copy_RSI_9, 'prev_RSI_13': copy_RSI_13
-    , 'prev_open_2': copy_candle_sticks_2[:, 0],'prev_high_2': copy_candle_sticks_2[:, 1], 'prev_low_2': copy_candle_sticks_2[:, 2], 'prev_close_2': copy_candle_sticks_2[:, 3], 'prev_volume_2': copy_candle_sticks_2[:, 4], 'prev_PSAR_2': copy_PSAR_arr_2, 'prev_SMA_3_2': copy_SMA_3_2, 'prev_SMA_5_2': copy_SMA_5_2, 'prev_RSI_9_2': copy_RSI_9_2, 'prev_RSI_13_2': copy_RSI_13_2
-    , 'labels': labels})
+df = pd.DataFrame({'open': candle_sticks[:, 0], 'high': candle_sticks[:, 1], 'low': candle_sticks[:, 2], 'close': candle_sticks[:, 3], 'volume': candle_sticks[:, 4], 'PSAR': PSAR_arr, 'SMA_3': SMA_3, 'SMA_5': SMA_5, 'RSI_9': RSI_9, 'RSI_13': RSI_13, 'prev_open': copy_candle_sticks[:, 0], 'prev_high': copy_candle_sticks[:, 1], 'prev_low': copy_candle_sticks[:, 2], 'prev_close': copy_candle_sticks[:, 3], 'prev_volume': copy_candle_sticks[:, 4], 'prev_PSAR': copy_PSAR_arr, 'prev_SMA_3': copy_SMA_3,
+                  'prev_SMA_5': copy_SMA_5, 'prev_RSI_9': copy_RSI_9, 'prev_RSI_13': copy_RSI_13, 'prev_open_2': copy_candle_sticks_2[:, 0], 'prev_high_2': copy_candle_sticks_2[:, 1], 'prev_low_2': copy_candle_sticks_2[:, 2], 'prev_close_2': copy_candle_sticks_2[:, 3], 'prev_volume_2': copy_candle_sticks_2[:, 4], 'prev_PSAR_2': copy_PSAR_arr_2, 'prev_SMA_3_2': copy_SMA_3_2, 'prev_SMA_5_2': copy_SMA_5_2, 'prev_RSI_9_2': copy_RSI_9_2, 'prev_RSI_13_2': copy_RSI_13_2, 'labels': labels})
 
 df = df.iloc[2:]
 df.drop(df.tail(1).index, inplace=True)  # drop last n rows
@@ -357,10 +355,30 @@ ax1.plot(0, candle_sticks[0][3] -
          (candle_sticks[0][3] * 0.001), "g.", label="Buy")
 ax1.legend(loc='upper left', numpoints=1)
 
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))], SMA_3)  # Plot SMA_3
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))], SMA_5)  # Plot SMA_5
+# adding seperate legend for the SMA values
+ax1.plot(0, candle_sticks[0][3], "-", color="orange", label="SMA_3")
+ax1.plot(0, candle_sticks[0][3], "g-", label="SMA_5")
+ax1.legend(loc='upper left', numpoints=1)
 
 ax2.plot([i for i in range(len(candle_sticks[:, 3]))], RSI_9)  # Plot RSI_9
 ax2.plot([i for i in range(len(candle_sticks[:, 3]))], RSI_13)  # Plot RSI_13
+
+# adding seperate legend for the RSI values
+ax2.plot(0, candle_sticks[0][3], "b-", label="RSI_9")
+ax2.plot(0, candle_sticks[0][3], "-", color="orange", label="RSI_13")
+ax2.legend(loc='upper left', numpoints=1)
+
+# plot points coordinates using mouse click and seperate left and right click
+
+
+def onclick(event):
+    if event.button == 1:
+        print('Left Click: ', event.xdata, event.ydata)
+    elif event.button == 3:
+        print('Right Click: ', event.xdata, event.ydata)
+
+
+cid = fig.canvas.mpl_connect('button_press_event', onclick)
+
 
 plt.show()
