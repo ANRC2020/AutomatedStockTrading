@@ -13,7 +13,7 @@ except:
     pass
 
 key = "YER7LLFWFGTLGLE9"
-ticker = "GOOG"
+ticker = "AAPL"
 
 url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval=5min&apikey={key}'
 r = requests.get(url)
