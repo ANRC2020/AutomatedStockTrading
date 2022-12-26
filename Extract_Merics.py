@@ -347,29 +347,45 @@ ax1.plot(0, candle_sticks[0][3] -
 ax1.legend(loc='best', numpoints=1)
 
 # adding seperate legend for the SMA values
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))], SMA_3, "-", color="orange", label="SMA_3")
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))], SMA_5, "g-", label="SMA_5")
+ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
+         SMA_3, "-", color="orange", label="SMA_3")
+ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
+         SMA_5, "g-", label="SMA_5")
 ax1.legend(loc='best', numpoints=1)
 
 # adding seperate legend for the RSI values
-ax2.plot([i for i in range(len(candle_sticks[:, 3]))], RSI_9, "b-", label="RSI_9")
-ax2.plot([i for i in range(len(candle_sticks[:, 3]))], RSI_13, "-", color="orange", label="RSI_13")
+ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
+         RSI_9, "b-", label="RSI_9")
+ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
+         RSI_13, "-", color="orange", label="RSI_13")
 ax2.legend(loc='best', numpoints=1)
 
 # plot points coordinates using mouse click and seperate left and right click
 
 print("\nLeft Click to Enter Trade and Right Click to Exit Trade\n")
 
+
 def onclick(event):
     if event.button == 1:
         print('Enter Trade: ', int(event.xdata), event.ydata)
-        labels[int(event.xdata)] = 1
-        ax1.plot.axvline(x = int(event.xdata), color = 'm')
-    
+        labels[int(event.xdata)] = 1\
+
+        # create a vertical line at the point clicked and display the line
+        ax1.axvline(x=event.xdata, color='m', linestyle='--', linewidth=1)
+
+        # display the line
+        plt.draw()
+
     elif event.button == 3:
         print('Exit Trade: ', int(event.xdata), event.ydata)
         labels[int(event.xdata)] = 2
-        ax1.plot.axvline(x = int(event.xdata), color = 'c')
+
+        # create a vertical line at the point clicked
+        ax1.axvline(x=event.xdata, color='c', linestyle='--', linewidth=1)
+
+        # display the line
+        plt.draw()
+
 
 cid = fig.canvas.mpl_connect('button_press_event', onclick)
 
