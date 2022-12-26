@@ -13,9 +13,10 @@ except:
     pass
 
 key = "YER7LLFWFGTLGLE9"
-ticker = "AAPL"
+ticker = "MSFT"
+interval = "5min"
 
-url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval=5min&apikey={key}'
+url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval={interval}&outputsize=full&apikey={key}'
 r = requests.get(url)
 data = r.json()
 

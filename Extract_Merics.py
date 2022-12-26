@@ -274,14 +274,64 @@ copy_RSI_13 = copy_RSI_13[0:len(copy_RSI_13)-1]
 
 RSI_13 = RSI_13[1::]
 
+# Experiment 2: Supply info from 2 iterations ago
+
+copy_candle_sticks_2 = candle_sticks
+copy_candle_sticks_2 = np.insert(
+    copy_candle_sticks_2, 0, np.array([0, 0, 0, 0, 0]), axis=0)
+copy_candle_sticks_2 = np.insert(
+    copy_candle_sticks_2, 0, np.array([0, 0, 0, 0, 0]), axis=0)
+copy_candle_sticks_2 = np.delete(copy_candle_sticks_2, 101, axis=0)
+copy_candle_sticks_2 = np.delete(copy_candle_sticks_2, 100, axis=0)
+
+# print(copy_candle_sticks)
+# print(copy_candle_sticks.shape)
+
+copy_PSAR_arr_2 = PSAR_arr
+copy_PSAR_arr_2.insert(0, 0)
+copy_PSAR_arr_2.insert(0, 0)
+copy_PSAR_arr_2 = copy_PSAR_arr_2[0:len(copy_PSAR_arr_2)-2]
+
+PSAR_arr = PSAR_arr[2::]
+
+copy_SMA_3_2 = SMA_3
+copy_SMA_3_2.insert(0, 0)
+copy_SMA_3_2.insert(0, 0)
+copy_SMA_3_2 = copy_SMA_3_2[0:len(copy_SMA_3_2)-2]
+
+SMA_3 = SMA_3[2::]
+
+copy_SMA_5_2 = SMA_5
+copy_SMA_5_2.insert(0, 0)
+copy_SMA_5_2.insert(0, 0)
+copy_SMA_5_2 = copy_SMA_5_2[0:len(copy_SMA_5_2)-2]
+
+SMA_5 = SMA_5[2::]
+
+copy_RSI_9_2 = RSI_9
+copy_RSI_9_2.insert(0, 0)
+copy_RSI_9_2.insert(0, 0)
+copy_RSI_9_2 = copy_RSI_9_2[0:len(copy_RSI_9_2)-2]
+
+RSI_9 = RSI_9[2::]
+
+copy_RSI_13_2 = RSI_13
+copy_RSI_13_2.insert(0, 0)
+copy_RSI_13_2.insert(0, 0)
+copy_RSI_13_2 = copy_RSI_13_2[0:len(copy_RSI_13_2)-2]
+
+RSI_13 = RSI_13[2::]
+
 # print(len(candle_sticks[:,0]), len(candle_sticks[:,1]), len(candle_sticks[:,2]), len(candle_sticks[:,3]), len(candle_sticks[:,4]), len(PSAR_arr), len(SMA_3), len(SMA_5), len(RSI_9), len(RSI_13))
 # print(len(copy_candle_sticks[:, 0]), len(copy_PSAR_arr), len(copy_SMA_3), len(copy_SMA_5), len(copy_RSI_9), len(copy_RSI_13))
 
 # Construct a dataframe of the stock prices and indicators
-df = pd.DataFrame({'open': candle_sticks[:, 0], 'high': candle_sticks[:, 1], 'low': candle_sticks[:, 2], 'close': candle_sticks[:, 3], 'volume': candle_sticks[:, 4], 'PSAR': PSAR_arr, 'SMA_3': SMA_3, 'SMA_5': SMA_5, 'RSI_9': RSI_9, 'RSI_13': RSI_13, 'prev_open': copy_candle_sticks[:, 0],
-                  'prev_high': copy_candle_sticks[:, 1], 'prev_low': copy_candle_sticks[:, 2], 'prev_close': copy_candle_sticks[:, 3], 'prev_volume': copy_candle_sticks[:, 4], 'prev_PSAR': copy_PSAR_arr, 'prev_SMA_3': copy_SMA_3, 'prev_SMA_5': copy_SMA_5, 'prev_RSI_9': copy_RSI_9, 'prev_RSI_13': copy_RSI_13, 'labels': labels})
+df = pd.DataFrame({'open': candle_sticks[:, 0], 'high': candle_sticks[:, 1], 'low': candle_sticks[:, 2], 'close': candle_sticks[:, 3], 'volume': candle_sticks[:, 4], 'PSAR': PSAR_arr, 'SMA_3': SMA_3, 'SMA_5': SMA_5, 'RSI_9': RSI_9, 'RSI_13': RSI_13
+    , 'prev_open': copy_candle_sticks[:, 0],'prev_high': copy_candle_sticks[:, 1], 'prev_low': copy_candle_sticks[:, 2], 'prev_close': copy_candle_sticks[:, 3], 'prev_volume': copy_candle_sticks[:, 4], 'prev_PSAR': copy_PSAR_arr, 'prev_SMA_3': copy_SMA_3, 'prev_SMA_5': copy_SMA_5, 'prev_RSI_9': copy_RSI_9, 'prev_RSI_13': copy_RSI_13
+    , 'prev_open_2': copy_candle_sticks_2[:, 0],'prev_high_2': copy_candle_sticks_2[:, 1], 'prev_low_2': copy_candle_sticks_2[:, 2], 'prev_close_2': copy_candle_sticks_2[:, 3], 'prev_volume_2': copy_candle_sticks_2[:, 4], 'prev_PSAR_2': copy_PSAR_arr_2, 'prev_SMA_3_2': copy_SMA_3_2, 'prev_SMA_5_2': copy_SMA_5_2, 'prev_RSI_9_2': copy_RSI_9_2, 'prev_RSI_13_2': copy_RSI_13_2
+    , 'labels': labels})
 
-
+df = df.iloc[2:]
 df.drop(df.tail(1).index, inplace=True)  # drop last n rows
 
 print(df.head())
