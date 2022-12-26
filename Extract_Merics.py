@@ -389,6 +389,16 @@ def onclick(event):
 
 cid = fig.canvas.mpl_connect('button_press_event', onclick)
 
+
+def on_key_press(event):
+    # if button 'b' is pressed, then remove the last line
+    if event.key == 'b':
+        ax1.lines.pop()
+        plt.draw()
+
+
+cid = fig.canvas.mpl_connect('key_press_event', on_key_press)
+
 plt.show()
 
 print(labels)
