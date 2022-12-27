@@ -16,7 +16,7 @@ key = "YER7LLFWFGTLGLE9"
 ticker = "MSFT"
 interval = "5min"
 
-url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval={interval}&apikey={key}' # &outputsize=full
+url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval={interval}&outputsize=full&apikey={key}' # &outputsize=full
 r = requests.get(url)
 data = r.json()
 

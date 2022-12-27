@@ -9,6 +9,9 @@ try:
 except:
     pass
 
+global enable
+enable = True
+
 with open('stock_data.pkl', 'rb') as f:
     candle_sticks = pickle.load(f)
 
@@ -327,6 +330,7 @@ RSI_13 = RSI_13[2::]
 
 # Set labels for this data
 labels = [0]*len(candle_sticks[:, 3])
+points = []
 
 fig, (ax1, ax2) = plt.subplots(1, 2)
 ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
@@ -366,9 +370,13 @@ print("\nLeft Click to Enter Trade and Right Click to Exit Trade\n")
 
 
 def onclick(event):
-    if event.button == 1:
+
+    global enable
+
+    if event.button == 1 and enable == True:
         print('Enter Trade: ', int(event.xdata), event.ydata)
-        labels[int(event.xdata)] = 1\
+        labels[int(event.xdata)] = 1
+        points.append(int(event.xdata))
 
         # create a vertical line at the point clicked and display the line
         ax1.axvline(x=event.xdata, color='m', linestyle='--', linewidth=1)
@@ -376,9 +384,10 @@ def onclick(event):
         # display the line
         plt.draw()
 
-    elif event.button == 3:
+    elif event.button == 3 and enable == True:
         print('Exit Trade: ', int(event.xdata), event.ydata)
         labels[int(event.xdata)] = 2
+        points.append(int(event.xdata))
 
         # create a vertical line at the point clicked
         ax1.axvline(x=event.xdata, color='c', linestyle='--', linewidth=1)
@@ -391,16 +400,36 @@ cid = fig.canvas.mpl_connect('button_press_event', onclick)
 
 
 def on_key_press(event):
+
+    global enable
+
     # if button 'b' is pressed, then remove the last line
     if event.key == 'b':
         ax1.lines.pop()
         plt.draw()
 
+        labels[points[-1]] = 0
+        points.pop()
+
+    elif event.key == 'l':
+        if enable == True:
+            enable = False
+        else:
+            enable = True
 
 cid = fig.canvas.mpl_connect('key_press_event', on_key_press)
 
 plt.show()
 
+prev_label = 2
+for i, label in enumerate(labels):
+    if label == 0:
+        labels[i] = prev_label    
+    elif label == 1:
+        prev_label = label
+    elif label == 2:
+        prev_label = label
+    
 print(labels)
 
 # Construct a dataframe of the stock prices and indicators
