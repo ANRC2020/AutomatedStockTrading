@@ -11,7 +11,7 @@ try:
 except:
     pass
 
-df = pd.read_pickle('Dataset') # load df from Extract_Metrics.py
+df = pd.read_pickle('Dataset')  # load df from Extract_Metrics.py
 
 # Normalize data
 # x = df.values #returns a numpy array
@@ -24,8 +24,9 @@ model = pk.load(open('ML_MODEL.pickle', 'rb'))
 
 # Split data into training and testing sets
 percentage = 0.9
-labels_column  = "labels" # 30
-X_train, X_test, y_train, y_test = df.loc[:, df.columns != labels_column][0:int(percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(percentage*df.shape[0]):df.shape[0]], df[labels_column][0:int(percentage*df.shape[0])], df[labels_column][int(percentage*df.shape[0]):df.shape[0]]
+labels_column = "labels"  # 30
+X_train, X_test, y_train, y_test = df.loc[:, df.columns != labels_column][0:int(percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(
+    percentage*df.shape[0]):df.shape[0]], df[labels_column][0:int(percentage*df.shape[0])], df[labels_column][int(percentage*df.shape[0]):df.shape[0]]
 
 print(model.score(X_train, y_train), model.score(X_test, y_test))
 
@@ -36,13 +37,25 @@ preds = model.predict(X_test).tolist()
 # Visualize the model's predictions on the true data
 
 fig = plt.figure()
-plt.plot([i for i in range(len(X_test['close']))], X_test['close']) # Plot Closing Prices
+plt.plot([i for i in range(len(X_test['close']))],
+         X_test['close'])  # Plot Closing Prices
 
 for i, pred in enumerate(preds):
 
-    if pred == 1: # "Good time to enter"
-        plt.plot(i, X_test['close'].iloc[i] + 0.01*(X_test['close'].iloc[i]), ".g")
-    elif pred == 2: # "Good time to exit"
-        plt.plot(i, X_test['close'].iloc[i] + 0.01*(X_test['close'].iloc[i]), ".r")
+    if pred == 1:  # "Good time to enter"
+        # plt.plot(i, X_test['close'].iloc[i] + 0.01 *
+        #          (X_test['close'].iloc[i]), ".g")
+
+        # plot 0.01 * (X_test['close'].iloc[i]) above the closing price as a line
+        plt.plot([i, i], [X_test['close'].iloc[i], X_test['close'].iloc[i] -
+                          0.01 * (X_test['close'].iloc[i])], "g")
+
+    elif pred == 2:  # "Good time to exit"
+        # plt.plot(i, X_test['close'].iloc[i] + 0.01 *
+        #          (X_test['close'].iloc[i]), ".r")
+
+        # plot 0.01 * (X_test['close'].iloc[i]) above the closing price as a line
+        plt.plot([i, i], [X_test['close'].iloc[i], X_test['close'].iloc[i] -
+                          0.01 * (X_test['close'].iloc[i])], "r")
 
 plt.show()
