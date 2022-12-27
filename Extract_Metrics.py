@@ -32,8 +32,7 @@ PSAR_arr = []
 # Initialize the calc_arr
 calc_arr[0][5] = 0  # Set Trend to be falling (does not matter)
 calc_arr[0][0] = candle_sticks[0][2]  # Set EP to be current low price
-# Set PSAR to be opposite to the EP (set to be current high)
-calc_arr[0][4] = candle_sticks[0][1]
+calc_arr[0][4] = candle_sticks[0][1]  # Set PSAR to be opposite to the EP (set to be current high)
 calc_arr[0][1] = 0.02  # Initial Acc value is 0.02
 calc_arr[0][2] = (calc_arr[0][4] - calc_arr[0][0]) * calc_arr[0][1]
 
@@ -244,9 +243,6 @@ copy_candle_sticks = np.insert(
     copy_candle_sticks, 0, np.array([0, 0, 0, 0, 0]), axis=0)
 copy_candle_sticks = np.delete(copy_candle_sticks, 100, axis=0)
 
-# print(copy_candle_sticks)
-# print(copy_candle_sticks.shape)
-
 copy_PSAR_arr = PSAR_arr
 copy_PSAR_arr.insert(0, 0)
 copy_PSAR_arr = copy_PSAR_arr[0:len(copy_PSAR_arr)-1]
@@ -287,9 +283,6 @@ copy_candle_sticks_2 = np.insert(
 copy_candle_sticks_2 = np.delete(copy_candle_sticks_2, 101, axis=0)
 copy_candle_sticks_2 = np.delete(copy_candle_sticks_2, 100, axis=0)
 
-# print(copy_candle_sticks)
-# print(copy_candle_sticks.shape)
-
 copy_PSAR_arr_2 = PSAR_arr
 copy_PSAR_arr_2.insert(0, 0)
 copy_PSAR_arr_2.insert(0, 0)
@@ -325,8 +318,32 @@ copy_RSI_13_2 = copy_RSI_13_2[0:len(copy_RSI_13_2)-2]
 
 RSI_13 = RSI_13[2::]
 
-# print(len(candle_sticks[:,0]), len(candle_sticks[:,1]), len(candle_sticks[:,2]), len(candle_sticks[:,3]), len(candle_sticks[:,4]), len(PSAR_arr), len(SMA_3), len(SMA_5), len(RSI_9), len(RSI_13))
-# print(len(copy_candle_sticks[:, 0]), len(copy_PSAR_arr), len(copy_SMA_3), len(copy_SMA_5), len(copy_RSI_9), len(copy_RSI_13))
+# Experiment 3: Include Variables Measuring the Values of Indicators to each other
+
+# SMA_3 relation to SMA_5
+SMA_3v5 = []
+
+for i in range(len(SMA_3)):
+    if SMA_3[i] < SMA_5[i]:
+        SMA_3v5.append(0)
+    elif SMA_3[i] > SMA_5[i]:
+        SMA_3v5.append(1)
+    else:
+        SMA_3v5.append(2)
+
+copy_SMA_3v5 = SMA_3v5
+copy_SMA_3v5.insert(0, 0)
+copy_SMA_3v5 = copy_SMA_3v5[0:len(copy_SMA_3v5)-1]
+
+SMA_3v5 = SMA_3v5[1::]
+
+copy_SMA_3v5_2 = SMA_3v5
+copy_SMA_3v5_2.insert(0, 0)
+copy_SMA_3v5_2.insert(0, 0)
+copy_SMA_3v5_2 = copy_SMA_3v5_2[0:len(copy_SMA_3v5_2)-2]
+
+SMA_3v5 = SMA_3v5[2::]
+
 
 # Set labels for this data
 labels = [0]*len(candle_sticks[:, 3])
@@ -335,26 +352,26 @@ points = []
 fig, (ax1) = plt.subplots(1, 1)
 ax1.plot([i for i in range(len(candle_sticks[:, 3]))], candle_sticks[:, 3])  # Plot Closing Prices
 
-# # Get Plottable PSAR values
-# for i, val in enumerate(PSAR_arr):
-#     if val == 0:
-#         ax1.plot(i, candle_sticks[i][3] + (candle_sticks[i][3] * 0.001), "r.")
-#     else:
-#         ax1.plot(i, candle_sticks[i][3] - (candle_sticks[i][3] * 0.001), "g.")
+# Get Plottable PSAR values
+for i, val in enumerate(PSAR_arr):
+    if val == 0:
+        ax1.plot(i, candle_sticks[i][3] + (candle_sticks[i][3] * 0.001), "r.")
+    else:
+        ax1.plot(i, candle_sticks[i][3] - (candle_sticks[i][3] * 0.001), "g.")
 
-# # legend
-# ax1.plot(0, candle_sticks[0][3] +
-#          (candle_sticks[0][3] * 0.001), "r.", label="Sell")
-# ax1.plot(0, candle_sticks[0][3] -
-#          (candle_sticks[0][3] * 0.001), "g.", label="Buy")
-# ax1.legend(loc='best', numpoints=1)
+# legend
+ax1.plot(0, candle_sticks[0][3] +
+         (candle_sticks[0][3] * 0.001), "r.", label="Sell")
+ax1.plot(0, candle_sticks[0][3] -
+         (candle_sticks[0][3] * 0.001), "g.", label="Buy")
+ax1.legend(loc='best', numpoints=1)
 
-# # adding seperate legend for the SMA values
-# ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
-#          SMA_3, "-", color="orange", label="SMA_3")
-# ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
-#          SMA_5, "g-", label="SMA_5")
-# ax1.legend(loc='best', numpoints=1)
+# adding seperate legend for the SMA values
+ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
+         SMA_3, "-", color="orange", label="SMA_3")
+ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
+         SMA_5, "g-", label="SMA_5")
+ax1.legend(loc='best', numpoints=1)
 
 # # adding seperate legend for the RSI values
 # ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
@@ -432,8 +449,10 @@ for i, label in enumerate(labels):
 print(labels)
 
 # Construct a dataframe of the stock prices and indicators
-df = pd.DataFrame({'open': candle_sticks[:, 0], 'high': candle_sticks[:, 1], 'low': candle_sticks[:, 2], 'close': candle_sticks[:, 3], 'volume': candle_sticks[:, 4], 'PSAR': PSAR_arr, 'SMA_3': SMA_3, 'SMA_5': SMA_5, 'RSI_9': RSI_9, 'RSI_13': RSI_13, 'prev_open': copy_candle_sticks[:, 0], 'prev_high': copy_candle_sticks[:, 1], 'prev_low': copy_candle_sticks[:, 2], 'prev_close': copy_candle_sticks[:, 3], 'prev_volume': copy_candle_sticks[:, 4], 'prev_PSAR': copy_PSAR_arr, 'prev_SMA_3': copy_SMA_3,
-                  'prev_SMA_5': copy_SMA_5, 'prev_RSI_9': copy_RSI_9, 'prev_RSI_13': copy_RSI_13, 'prev_open_2': copy_candle_sticks_2[:, 0], 'prev_high_2': copy_candle_sticks_2[:, 1], 'prev_low_2': copy_candle_sticks_2[:, 2], 'prev_close_2': copy_candle_sticks_2[:, 3], 'prev_volume_2': copy_candle_sticks_2[:, 4], 'prev_PSAR_2': copy_PSAR_arr_2, 'prev_SMA_3_2': copy_SMA_3_2, 'prev_SMA_5_2': copy_SMA_5_2, 'prev_RSI_9_2': copy_RSI_9_2, 'prev_RSI_13_2': copy_RSI_13_2, 'labels': labels})
+df = pd.DataFrame({'open': candle_sticks[:, 0], 'high': candle_sticks[:, 1], 'low': candle_sticks[:, 2], 'close': candle_sticks[:, 3], 'volume': candle_sticks[:, 4], 'PSAR': PSAR_arr, 'SMA_3': SMA_3, 'SMA_5': SMA_5, 'RSI_9': RSI_9, 'RSI_13': RSI_13,
+    'prev_open': copy_candle_sticks[:, 0], 'prev_high': copy_candle_sticks[:, 1], 'prev_low': copy_candle_sticks[:, 2], 'prev_close': copy_candle_sticks[:, 3], 'prev_volume': copy_candle_sticks[:, 4], 'prev_PSAR': copy_PSAR_arr, 'prev_SMA_3': copy_SMA_3, 'prev_SMA_5': copy_SMA_5, 'prev_RSI_9': copy_RSI_9, 'prev_RSI_13': copy_RSI_13,
+    'prev_open_2': copy_candle_sticks_2[:, 0], 'prev_high_2': copy_candle_sticks_2[:, 1], 'prev_low_2': copy_candle_sticks_2[:, 2], 'prev_close_2': copy_candle_sticks_2[:, 3], 'prev_volume_2': copy_candle_sticks_2[:, 4], 'prev_PSAR_2': copy_PSAR_arr_2, 'prev_SMA_3_2': copy_SMA_3_2, 'prev_SMA_5_2': copy_SMA_5_2, 'prev_RSI_9_2': copy_RSI_9_2, 'prev_RSI_13_2': copy_RSI_13_2,
+    'labels': labels})
 
 df = df.iloc[2:]
 df.drop(df.tail(1).index, inplace=True)  # drop last n rows

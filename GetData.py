@@ -13,7 +13,7 @@ except:
     pass
 
 key = "YER7LLFWFGTLGLE9"
-ticker = "HOOD"
+ticker = "NVDA"
 interval = "5min"
 
 url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval={interval}&outputsize=full&apikey={key}' # &outputsize=full

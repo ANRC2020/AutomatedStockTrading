@@ -26,7 +26,8 @@ model = pk.load(open('ML_MODEL.pickle', 'rb'))
 
 # Split data into training and testing sets
 percentage = 0.7
-labels_column = "labels"  # 30
+labels_column = "labels"
+# labels_column = 30
 X_train, X_test, y_train, y_test = df.loc[:, df.columns != labels_column][0:int(percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(
     percentage*df.shape[0]):df.shape[0]], df[labels_column][0:int(percentage*df.shape[0])], df[labels_column][int(percentage*df.shape[0]):df.shape[0]]
 
@@ -49,6 +50,11 @@ prev_pred = 2
 enter_price = 0
 exit_price = 0
 num_stocks_held = 0
+
+losing_trades = 0
+net_loss = 0
+winning_trades = 0
+net_winnings = 0
 
 for i, pred in enumerate(preds):
     
@@ -73,8 +79,18 @@ for i, pred in enumerate(preds):
         trades.append(exit_price*num_stocks_held  - enter_price*num_stocks_held)
         num_stocks_held = 0
 
+        if trades[-1] < 0:
+            losing_trades += 1
+            net_loss += trades[-1]
+        elif trades[-1] > 0:
+            winning_trades += 1
+            net_winnings += trades[-1]
+
 print(trades)
 print(budget)
+
+print(f"\nLoss Count: {losing_trades}\tWin Count: {winning_trades}\n")
+print(f"Net Loss: {net_loss}\tNet Winnings: {net_winnings}\n")
 
 # Visualize the model's predictions on the true data
 
