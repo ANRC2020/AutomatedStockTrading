@@ -25,7 +25,7 @@ df = pd.read_pickle('Dataset') # load df from Extract_Metrics.py
 # print(df.loc[:, df.columns != 'labels'][0:int(.7*df.shape[0])])
 
 # Split data into training and testing sets
-percentage = 0.9
+percentage = 0.7
 labels_column  =  "labels" # 30
 X_train, X_test, y_train, y_test = df.loc[:, df.columns != labels_column][0:int(percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(percentage*df.shape[0]):df.shape[0]], df[labels_column][0:int(percentage*df.shape[0])], df[labels_column][int(percentage*df.shape[0]):df.shape[0]]
 

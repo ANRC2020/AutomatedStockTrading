@@ -332,37 +332,36 @@ RSI_13 = RSI_13[2::]
 labels = [0]*len(candle_sticks[:, 3])
 points = []
 
-fig, (ax1, ax2) = plt.subplots(1, 2)
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
-         candle_sticks[:, 3])  # Plot Closing Prices
+fig, (ax1) = plt.subplots(1, 1)
+ax1.plot([i for i in range(len(candle_sticks[:, 3]))], candle_sticks[:, 3])  # Plot Closing Prices
 
-# Get Plottable PSAR values
-for i, val in enumerate(PSAR_arr):
-    if val == 0:
-        ax1.plot(i, candle_sticks[i][3] + (candle_sticks[i][3] * 0.001), "r.")
-    else:
-        ax1.plot(i, candle_sticks[i][3] - (candle_sticks[i][3] * 0.001), "g.")
+# # Get Plottable PSAR values
+# for i, val in enumerate(PSAR_arr):
+#     if val == 0:
+#         ax1.plot(i, candle_sticks[i][3] + (candle_sticks[i][3] * 0.001), "r.")
+#     else:
+#         ax1.plot(i, candle_sticks[i][3] - (candle_sticks[i][3] * 0.001), "g.")
 
-# legend
-ax1.plot(0, candle_sticks[0][3] +
-         (candle_sticks[0][3] * 0.001), "r.", label="Sell")
-ax1.plot(0, candle_sticks[0][3] -
-         (candle_sticks[0][3] * 0.001), "g.", label="Buy")
-ax1.legend(loc='best', numpoints=1)
+# # legend
+# ax1.plot(0, candle_sticks[0][3] +
+#          (candle_sticks[0][3] * 0.001), "r.", label="Sell")
+# ax1.plot(0, candle_sticks[0][3] -
+#          (candle_sticks[0][3] * 0.001), "g.", label="Buy")
+# ax1.legend(loc='best', numpoints=1)
 
-# adding seperate legend for the SMA values
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
-         SMA_3, "-", color="orange", label="SMA_3")
-ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
-         SMA_5, "g-", label="SMA_5")
-ax1.legend(loc='best', numpoints=1)
+# # adding seperate legend for the SMA values
+# ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
+#          SMA_3, "-", color="orange", label="SMA_3")
+# ax1.plot([i for i in range(len(candle_sticks[:, 3]))],
+#          SMA_5, "g-", label="SMA_5")
+# ax1.legend(loc='best', numpoints=1)
 
-# adding seperate legend for the RSI values
-ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
-         RSI_9, "b-", label="RSI_9")
-ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
-         RSI_13, "-", color="orange", label="RSI_13")
-ax2.legend(loc='best', numpoints=1)
+# # adding seperate legend for the RSI values
+# ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
+#          RSI_9, "b-", label="RSI_9")
+# ax2.plot([i for i in range(len(candle_sticks[:, 3]))],
+#          RSI_13, "-", color="orange", label="RSI_13")
+# ax2.legend(loc='best', numpoints=1)
 
 # plot points coordinates using mouse click and seperate left and right click
 
