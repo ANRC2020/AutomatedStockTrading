@@ -1,0 +1,1 @@
+ticker = "EUR_USD"
