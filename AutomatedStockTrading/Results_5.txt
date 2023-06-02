@@ -1,0 +1,266 @@
+
+Skipped AUD_CAD
+
+Skipped AUD_CHF
+
+Skipped AUD_CNH
+
+Skipped AUD_DKK
+
+Skipped AUD_HUF
+
+Skipped AUS_MXN
+
+Skipped AUD_NOK
+
+Skipped AUD_NZD
+
+Skipped AUD_PLN
+
+Skipped AUD_SEK
+
+Skipped AUD_JPY
+
+Skipped AUD_SGD
+
+Skipped AUD_USD
+
+Skipped AUD_ZAR
+
+Skipped CAD_CHF
+
+Skipped CAD_CNH
+
+Skipped CAD_CZK
+
+Skipped CAD_DKK
+
+Skipped CAD_HKD
+
+Skipped CAD_HUF
+
+Skipped CAD_JPY
+
+Skipped CAD_MXN
+
+Skipped CAD_NOK
+
+Skipped CAD_PLN
+
+Skipped CAD_SEK
+
+Skipped CAD_SGD
+
+Skipped CAD_ZAR
+
+Skipped CHF_CNH
+
+Skipped CHF_CZK
+
+Skipped CHF_DKK
+
+Skipped CHF_HKD
+
+Skipped CHF_HUF
+
+Skipped CHF_JPY
+
+Skipped CHF_MNX
+
+Skipped CHF_NOK
+
+Skipped CHF_PLN
+
+Skipped CHF_SEK
+
+Skipped CHF_SGD
+
+Skipped CHF_TRY
+
+Skipped CHF_ZAR
+
+Skipped DKK_CZK
+
+Skipped DKK_HKD
+
+Skipped DKK_HUF
+
+Skipped DKK_MXN
+
+Skipped DKK_NOK
+
+Skipped DKK_PLN
+
+Skipped DKK_SEK
+
+Skipped DKK_SGD
+
+Skipped DKK_ZAR
+
+Skipped EUR_AUD
+
+Skipped EUR_CAD
+
+Skipped EUR_CHF
+
+Skipped EUR_CNH
+
+Skipped EUR_CZK
+
+Skipped EUR_DKK
+
+Skipped EUR_GBP
+
+Skipped EUR_HKD
+
+Skipped EUR_HUF
+
+Skipped EUR_JPY
+
+Skipped EUR_MXN
+
+Skipped EUR_NOK
+
+Skipped EUR_NZD
+
+Skipped EUR_PLN
+
+Skipped EUR_RUB
+
+Skipped EUR_SEK
+
+Skipped EUR_SGD
+
+Skipped EUR_TRY
+
+Skipped EUR_USD
+
+Skipped EUR_ZAR
+
+Skipped GBP_AUD
+
+Skipped GBP_CAD
+
+Skipped GBP_CHF
+
+Skipped GBP_CNH
+
+Skipped GBP_CZK
+
+Skipped GBP_DKK
+
+Skipped GBP_HKD
+
+Skipped GBP_HUF
+
+Skipped GBP_JPY
+
+Skipped GBP_MXN
+
+Skipped GBP_NOK
+
+Skipped GBP_NZD
+
+Skipped GBP_PLN
+
+Skipped GBP_SEK
+
+Skipped GBP_SGD
+
+Skipped GBP_USD
+
+Skipped GBP_ZAR
+
+Skipped JPY_CZK
+
+Skipped JPY_DKK
+
+Skipped JPY_HKD
+
+Skipped JPY_HUF
+
+Skipped JPY_MXN
+
+Skipped JPY_NOK
+
+Skipped JPY_PLN
+
+Skipped JPY_SEK
+
+Skipped JPY_SGD
+
+Skipped JPY_ZAR
+
+Skipped NOK_CZK
+
+Skipped NOK_HKD
+
+Skipped NOK_HUF
+
+Skipped NOK_MXN
+
+Skipped NOK_PLN
+
+Skipped NOK_SEK
+
+Skipped NOK_SGD
+
+Skipped NOK_ZAR
+
+Skipped NZD_CAD
+
+Skipped NZD_CHF
+
+Skipped NZD_CZK
+
+Skipped NZD_DKK
+
+Skipped NZD_HKD
+
+Skipped NZD_HUF
+
+Skipped NZD_JPY
+
+Skipped NZD_MXN
+
+Skipped NZD_NOK
+
+Skipped NZD_PLN
+
+Skipped NZD_SEK
+
+Skipped NZD_SGD
+
+Skipped NZD_USD
+
+Skipped NZD_ZAR
+
+Skipped USD_CAD
+
+Skipped USD_CHF
+
+Skipped USD_CNH
+
+Skipped USD_DKK
+
+Skipped USD_HKD
+
+Skipped USD_HUF
+
+Skipped USD_JPY
+
+Skipped USD_MXN
+
+Skipped USD_NOK
+
+Skipped USD_PLN
+
+Skipped USD_RUB
+
+Skipped USD_SEK
+
+Skipped USD_SGD
+
+Skipped USD_TRY
+
+Skipped USD_ZAR

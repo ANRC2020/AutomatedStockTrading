@@ -1,0 +1,6 @@
+{
+"meta":{"test_sets":[],"test_metrics":[],"learn_metrics":[{"best_value":"Min","name":"CrossEntropy"}],"launch_mode":"Train","parameters":"","iteration_count":2,"learn_sets":["learn"],"name":"experiment"},
+"iterations":[
+{"learn":[0.6912799502],"iteration":0,"passed_time":0.1393133248,"remaining_time":0.1393133248},
+{"learn":[0.6892851823],"iteration":1,"passed_time":0.1405150166,"remaining_time":0}
+]}

@@ -120,6 +120,7 @@ print(f"\nBudget: {budget}\n")
 
 print(f"\nLoss Count: {losing_trades}\tWin Count: {winning_trades}\n")
 print(f"Net Loss: {net_loss}\tNet Winnings: {net_winnings}\n")
+print(f"Win to Loss Ratio: {abs(net_winnings/net_loss)}")
 
 # Visualize the model's predictions on the true data
 

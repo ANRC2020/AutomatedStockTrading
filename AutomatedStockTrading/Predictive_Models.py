@@ -6,205 +6,248 @@ from sklearn import preprocessing
 import pickle as pk
 from RunDetails import ticker
 
-try:
-    os.system('cls')
-except:
-    pass
+def train_models(ticker):
+    try:
+        os.system('cls')
+    except:
+        pass
 
-df = pd.read_pickle('Dataset') # load df from Extract_Metrics.py
+    df = pd.read_pickle('Dataset') # load df from Extract_Metrics.py
 
-print(df.describe())
+    print(df.describe())
 
-# Normalize data
-x = df.values #returns a numpy array
-min_max_scaler = preprocessing.MinMaxScaler()
-x_scaled = min_max_scaler.fit_transform(x)
-df = pd.DataFrame(x_scaled)
+    df = df.drop(['close'], axis=1)
 
-# print(df.describe())
+    # Normalize data
+    x = df.values #returns a numpy array
+    min_max_scaler = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(x)
+    df = pd.DataFrame(x_scaled)
 
-# print(df.loc[:, df.columns != 'labels'][0:int(.7*df.shape[0])])
+    # print(df.describe())
 
-# Split data into training and testing sets
-# percentage = 0.5
-# labels_column = "labels"
-# labels_column = 36
+    # print(df.loc[:, df.columns != 'labels'][0:int(.7*df.shape[0])])
 
-# X_train, X_test, y_train, y_test = df.loc[:, df.columns != labels_column][0:int(percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(percentage*df.shape[0]):df.shape[0]], df[labels_column][0:int(percentage*df.shape[0])], df[labels_column][int(percentage*df.shape[0]):df.shape[0]]
+    # Split data into training and testing sets
+    # percentage = 0.5
+    # labels_column = "labels"
+    # labels_column = 36
 
-train_percentage = 0.7
-valid_percentage = 0.1
-# labels_column = "labels"
-labels_column = 37
-X_train, X_valid, X_test, y_train, y_valid, y_test = df.loc[:, df.columns != labels_column][0:int(train_percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(train_percentage*df.shape[0]):int((train_percentage + valid_percentage)*df.shape[0])], df.loc[:, df.columns != labels_column][int((train_percentage + valid_percentage)*df.shape[0]):df.shape[0]], df[labels_column][0:int(train_percentage*df.shape[0])], df[labels_column][int(train_percentage*df.shape[0]):int((train_percentage + valid_percentage)*df.shape[0])], df[labels_column][int((train_percentage + valid_percentage)*df.shape[0]):df.shape[0]]
+    # X_train, X_test, y_train, y_test = df.loc[:, df.columns != labels_column][0:int(percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(percentage*df.shape[0]):df.shape[0]], df[labels_column][0:int(percentage*df.shape[0])], df[labels_column][int(percentage*df.shape[0]):df.shape[0]]
 
-# # Fit a model to the training data
-# # Lets try a decision tree to start off
-# from sklearn import tree
-# from sklearn.tree import DecisionTreeClassifier
+    train_percentage = .7
+    valid_percentage = .1
 
-# dtree = DecisionTreeClassifier()
-# dtree = dtree.fit(X_train, y_train)
+    # labels_column = "labels"
+    labels_column = 33
 
-# tree.plot_tree(dtree, feature_names=X_train.columns)
+    X_train, X_valid, X_test, y_train, y_valid, y_test = df.loc[:, df.columns != labels_column][0:int(train_percentage*df.shape[0])], df.loc[:, df.columns != labels_column][int(train_percentage*df.shape[0]):int((train_percentage + valid_percentage)*df.shape[0])], df.loc[:, df.columns != labels_column][int((train_percentage + valid_percentage)*df.shape[0]):df.shape[0]], df[labels_column][0:int(train_percentage*df.shape[0])], df[labels_column][int(train_percentage*df.shape[0]):int((train_percentage + valid_percentage)*df.shape[0])], df[labels_column][int((train_percentage + valid_percentage)*df.shape[0]):df.shape[0]]
 
-# print(dtree.score(X_train, y_train))
-# print(dtree.score(X_test, y_test))
-# print(tree.plot_tree(dtree, feature_names=X_train.columns))
+    # # Fit a model to the training data
+    # # Lets try a decision tree to start off
+    # from sklearn import tree
+    # from sklearn.tree import DecisionTreeClassifier
 
-# Try using a Random Forest Classifier
+    # dtree = DecisionTreeClassifier()
+    # dtree = dtree.fit(X_train, y_train)
 
-from sklearn.ensemble import RandomForestClassifier
+    # tree.plot_tree(dtree, feature_names=X_train.columns)
 
-best_score = 0
-best_config = {0, 0, 0}
+    # print(dtree.score(X_train, y_train))
+    # print(dtree.score(X_test, y_test))
+    # print(tree.plot_tree(dtree, feature_names=X_train.columns))
 
-n = 10
+    # Try using a Random Forest Classifier
 
-compiled_models = []
+    from sklearn.ensemble import RandomForestClassifier
 
-for n_estimators in [i for i in range(1,10)]: # 5
-    for max_depth in [i for i in range(1, 50)]: # 50
-        for min_samples_split in [i for i in range(2, 10)]: # 8
-            model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, min_samples_split = min_samples_split).fit(X_train, y_train)
+    best_score = 0
+    best_config = {0, 0, 0}
 
-            # if best_score < model.score(X_train, y_train):
-            #     print(model.score(X_train, y_train), model.score(X_test, y_test))
-            #     best_score = model.score(X_test, y_test)
-            #     best_config = {n_estimators, max_depth, 2}
-            #     print(model)
+    n = 10
 
-            #     filename = "ML_MODEL.pickle"
-            #     pk.dump(model, open(filename, 'wb'))
+    compiled_models = []
 
-            compiled_models.append([float(model.score(X_valid,y_valid)), model])
+    for n_estimators in [i for i in range(1,10)]: # 5
+        for max_depth in [i for i in range(1, 50)]: # 50
+            for min_samples_split in [i for i in range(2, 10)]: # 8
+                model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, min_samples_split = min_samples_split).fit(X_train, y_train)
 
-compiled_models.sort(key=lambda row: (row[0]))
-compiled_models = compiled_models[::-1]
-compiled_models = compiled_models[0:n]
+                # if best_score < model.score(X_train, y_train):
+                #     print(model.score(X_train, y_train), model.score(X_test, y_test))
+                #     best_score = model.score(X_test, y_test)
+                #     best_config = {n_estimators, max_depth, 2}
+                #     print(model)
 
-for i, model in enumerate(compiled_models):
-    print(model[0], model[1])
-    filename = f"ML_MODEL_{ticker}_{i}.pickle"
-    pk.dump(model[1], open(filename, 'wb'))
+                #     filename = "ML_MODEL.pickle"
+                #     pk.dump(model, open(filename, 'wb'))
 
+                compiled_models.append([float(model.score(X_valid,y_valid)), model])
 
-# Try using XGBoost
-# from xgboost import XGBClassifier
+    compiled_models.sort(key=lambda row: (row[0]))
+    compiled_models = compiled_models[::-1]
+    compiled_models = compiled_models[0:n]
 
-# # Use classifier or regressor according to your problem
+    for i, model in enumerate(compiled_models):
+        print(model[0], model[1])
+        filename = f"ML_MODEL_{ticker}_{i}.pickle"
+        pk.dump(model[1], open(filename, 'wb'))
 
-# best_score = []
-# best_model = None
 
-# for colsample_bytree in [i/100 for i in range(100)]:
-#     for learning_rate in [i/100 for i in range(100)]:
-#         for max_depth in [i for i in range(15)]:
-#             for alpha in [i for i in range(10)]:
-#                 for n_estimators in [1 for i in range(15)]:
-#                     model = XGBClassifier(colsample_bytree = colsample_bytree, learning_rate = learning_rate, max_depth = max_depth, alpha = 10, n_estimators = n_estimators)
-#                     model.fit(X_train, y_train)
+    # Try using XGBoost
+    # from xgboost import XGBClassifier
 
-#                     try:
-#                         os.system('cls')
-#                     except:
-#                         pass
+    # # Use classifier or regressor according to your problem
 
-#                     if best_score < model.score(X_test, y_test):
-#                         print(model.score(X_train, y_train), model.score(X_test, y_test))
-#                         best_score = [model.score(X_train, y_train), model.score(X_test, y_test)]
-#                         print(model)
+    # best_score = []
+    # best_model = None
 
-#                         filename = "ML_MODEL.pickle"
-#                         pk.dump(model, open(filename, 'wb'))
+    # for colsample_bytree in [i/100 for i in range(100)]:
+    #     for learning_rate in [i/100 for i in range(100)]:
+    #         for max_depth in [i for i in range(15)]:
+    #             for alpha in [i for i in range(10)]:
+    #                 for n_estimators in [1 for i in range(15)]:
+    #                     model = XGBClassifier(colsample_bytree = colsample_bytree, learning_rate = learning_rate, max_depth = max_depth, alpha = 10, n_estimators = n_estimators)
+    #                     model.fit(X_train, y_train)
 
-# print(best_score)
-# print(best_model)
+    #                     try:
+    #                         os.system('cls')
+    #                     except:
+    #                         pass
 
-# # Neural Nets (Mark 1)
+    #                     if best_score < model.score(X_test, y_test):
+    #                         print(model.score(X_train, y_train), model.score(X_test, y_test))
+    #                         best_score = [model.score(X_train, y_train), model.score(X_test, y_test)]
+    #                         print(model)
 
-# import tensorflow as tf
-# from tensorflow import keras
-# from keras import Sequential, layers
+    #                         filename = "ML_MODEL.pickle"
+    #                         pk.dump(model, open(filename, 'wb'))
 
-# model = Sequential()
+    # print(best_score)
+    # print(best_model)
 
-# # Input Layer
-# model.add(layers.Dense(36, activation='relu', input_dim=36))
+    # # Neural Nets (Mark 1)
 
-# # Hidden Layer
-# model.add(layers.Dense(60, activation='relu', kernel_regularizer='l2'))
-# model.add(layers.BatchNormalization())
+    # import tensorflow as tf
+    # from tensorflow import keras
+    # from keras import Sequential, layers
 
-# model.add(layers.Dense(60, activation='relu'))
-# model.add(layers.BatchNormalization())
+    # model = Sequential()
 
-# # Output Layer
-# model.add(layers.Dense(1, activation ='sigmoid'))
+    # # Input Layer
+    # model.add(layers.Dense(36, activation='relu', input_dim=36))
 
-# model.summary()
+    # # Hidden Layer
+    # model.add(layers.Dense(60, activation='relu', kernel_regularizer='l2'))
+    # model.add(layers.BatchNormalization())
 
-# model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+    # model.add(layers.Dense(60, activation='relu'))
+    # model.add(layers.BatchNormalization())
 
-# model.fit(np.array(X_train), np.array(y_train), epochs=30, batch_size=26, verbose=1, validation_data = (np.array(X_test), np.array(y_test)))
+    # # Output Layer
+    # model.add(layers.Dense(1, activation ='sigmoid'))
 
-# score = model.evaluate(np.array(X_test), np.array(y_test), verbose=0)
+    # model.summary()
 
-# print(score[1])
+    # model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-# model.save('ML_MODEL')
+    # model.fit(np.array(X_train), np.array(y_train), epochs=30, batch_size=26, verbose=1, validation_data = (np.array(X_test), np.array(y_test)))
 
-# print(model.predict(X_test).tolist())
+    # score = model.evaluate(np.array(X_test), np.array(y_test), verbose=0)
 
-# pred = [1 if entry[0] > 0.5 else 2 for entry in model.predict(X_test).tolist()]
+    # print(score[1])
 
-# print(pred)
+    # model.save('ML_MODEL')
 
-# # Neural Nets (Mark 2)
-# X_train = np.array(X_train)
-# y_train = np.array(y_train)
-# X_test = np.array(X_test)
-# y_test = np.array(y_test)
+    # print(model.predict(X_test).tolist())
 
-# X_train=X_train.reshape(X_train.shape[0],X_train.shape[1],1)
-# X_test=X_test.reshape(X_test.shape[0],X_test.shape[1],1)
+    # pred = [1 if entry[0] > 0.5 else 2 for entry in model.predict(X_test).tolist()]
 
-# print(X_train.shape[1:])
+    # print(pred)
 
-# import tensorflow as tf
-# from tensorflow import keras
-# from keras import layers, Sequential
-# from keras.layers import LSTM
+    # # Neural Nets (Mark 2)
+    # X_train = np.array(X_train)
+    # y_train = np.array(y_train)
+    # X_test = np.array(X_test)
+    # y_test = np.array(y_test)
 
-# #Initializing the classifier Network
-# model = Sequential()
+    # X_train=X_train.reshape(X_train.shape[0],X_train.shape[1],1)
+    # X_test=X_test.reshape(X_test.shape[0],X_test.shape[1],1)
 
-# #Adding the input LSTM network layer
-# model.add(LSTM(36, activation='relu', kernel_regularizer='l2', input_shape=(36, 1))) #  return_sequences=True,
-# # model.add(layers.Dropout(0.1))
+    # print(X_train.shape[1:])
 
-# #Hidden layer
+    # import tensorflow as tf
+    # from tensorflow import keras
+    # from keras import layers, Sequential
+    # from keras.layers import LSTM
 
-# model.add(layers.Dense(36, activation='relu'))
-# model.add(layers.Dense(36, activation='relu'))
+    # #Initializing the classifier Network
+    # model = Sequential()
 
-# # Output Layer
-# model.add(layers.Dense(1, activation ='sigmoid'))
+    # #Adding the input LSTM network layer
+    # model.add(LSTM(36, activation='relu', kernel_regularizer='l2', input_shape=(36, 1))) #  return_sequences=True,
+    # # model.add(layers.Dropout(0.1))
 
-# #Compiling the network
-# model.compile(loss='binary_crossentropy', optimizer="adam", metrics=['accuracy'])
+    # #Hidden layer
 
-# #Fitting the data to the model
-# model.fit(X_train, y_train, epochs=25, validation_data=(X_test, y_test))
+    # model.add(layers.Dense(36, activation='relu'))
+    # model.add(layers.Dense(36, activation='relu'))
 
-# score = model.evaluate(X_test, y_test, verbose=0)
+    # # Output Layer
+    # model.add(layers.Dense(1, activation ='sigmoid'))
 
-# print(score[1])
+    # #Compiling the network
+    # model.compile(loss='binary_crossentropy', optimizer="adam", metrics=['accuracy'])
 
-# model.save('ML_MODEL_RNN')
+    # #Fitting the data to the model
+    # model.fit(X_train, y_train, epochs=25, validation_data=(X_test, y_test))
 
-# # print(model.predict(X_test).tolist())
+    # score = model.evaluate(X_test, y_test, verbose=0)
 
-# pred = [1 if entry[0] > 0.5 else 2 for entry in model.predict(X_test).tolist()]
+    # print(score[1])
 
-# print(pred)
+    # model.save('ML_MODEL_RNN')
+
+    # # print(model.predict(X_test).tolist())
+
+    # pred = [1 if entry[0] > 0.5 else 2 for entry in model.predict(X_test).tolist()]
+
+    # print(pred)
+
+    # from sklearn import svm
+
+    # clf = svm.SVC(kernel='rbf')
+    # clf.fit(X_train, y_train)
+
+    # print(clf.score(X_valid, y_valid))
+
+    # # Catboost
+    # import numpy as np
+
+    # from catboost import CatBoostClassifier, Pool
+
+    # # initialize data
+    # # test_data = catboost_pool = Pool(X_train, y_train)
+
+    # model = CatBoostClassifier(iterations=2,
+    #                            depth=3,
+    #                            learning_rate=0.01,
+    #                            loss_function='CrossEntropy',
+    #                            verbose=True)
+    # # train the model
+    # model.fit(X_train, y_train)
+    # # make the prediction using the resulting model
+    # y_pred = model.predict(X_valid)
+    # # preds_proba = model.predict_proba(test_data)
+
+    # num_correct = 0
+    # y_valid = list(y_valid)
+
+    # for i, entry in enumerate(y_pred):
+    #     if entry == y_valid[i]:
+    #         num_correct += 1
+
+    # print(f"Accuracy: {(num_correct/len(y_valid))}")
+
+if __name__ == "__main__":
+    train_models(ticker)

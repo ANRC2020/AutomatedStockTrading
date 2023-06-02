@@ -1,0 +1,387 @@
+
+Ticker: AUD_CAD 
+Loss Count: 26	Win Count: 15
+ Net Loss: -23.41670999999974	Net Winnings: 16.58998999999983
+ Win to Loss Ratio: 0.7084680127994075
+Ticker: AUD_CHF 
+Loss Count: 22	Win Count: 15
+ Net Loss: -26.29770999999903	Net Winnings: 22.37799000000018
+ Win to Loss Ratio: 0.8509482384588243
+Skipped AUD_CNH
+
+Skipped AUD_DKK
+
+Skipped AUD_HUF
+
+Skipped AUS_MXN
+
+Skipped AUD_NOK
+
+Ticker: AUD_NZD 
+Loss Count: 25	Win Count: 13
+ Net Loss: -19.825009999999907	Net Winnings: 12.123539999999707
+ Win to Loss Ratio: 0.6115275603896172
+Skipped AUD_PLN
+
+Skipped AUD_SEK
+
+Ticker: AUD_JPY 
+Loss Count: 11	Win Count: 13
+ Net Loss: -21.306999999999903	Net Winnings: 27.96199999999999
+ Win to Loss Ratio: 1.3123386680433715
+Ticker: AUD_SGD 
+Loss Count: 1	Win Count: 1
+ Net Loss: -2.844799999999964	Net Winnings: 1.7936000000000831
+ Win to Loss Ratio: 0.6304836895388449
+Ticker: AUD_USD 
+Loss Count: 19	Win Count: 19
+ Net Loss: -31.04043999999965	Net Winnings: 34.62316999999973
+ Win to Loss Ratio: 1.1154213664497064
+Skipped AUD_ZAR
+
+Ticker: CAD_CHF 
+Loss Count: 30	Win Count: 25
+ Net Loss: -28.335500000000025	Net Winnings: 30.918369999999754
+ Win to Loss Ratio: 1.09115314711227
+Skipped CAD_CNH
+
+Skipped CAD_CZK
+
+Skipped CAD_DKK
+
+Ticker: CAD_HKD 
+Loss Count: 42	Win Count: 36
+ Net Loss: -25.681529999999498	Net Winnings: 30.76498000000072
+ Win to Loss Ratio: 1.1979418671707378
+Skipped CAD_HUF
+
+Ticker: CAD_JPY 
+Loss Count: 3	Win Count: 4
+ Net Loss: -11.509999999999877	Net Winnings: 24.920000000000073
+ Win to Loss Ratio: 2.165073848827136
+Skipped CAD_MXN
+
+Skipped CAD_NOK
+
+Skipped CAD_PLN
+
+Skipped CAD_SEK
+
+Ticker: CAD_SGD 
+Loss Count: 5	Win Count: 2
+ Net Loss: -2.0422099999999546	Net Winnings: 4.749509999999987
+ Win to Loss Ratio: 2.3256716987969366
+Skipped CAD_ZAR
+
+Skipped CHF_CNH
+
+Skipped CHF_CZK
+
+Skipped CHF_DKK
+
+Ticker: CHF_HKD 
+Loss Count: 19	Win Count: 15
+ Net Loss: -21.497579999999743	Net Winnings: 24.014250000000175
+ Win to Loss Ratio: 1.1170675955154237
+Skipped CHF_HUF
+
+Ticker: CHF_JPY 
+Loss Count: 14	Win Count: 19
+ Net Loss: -21.993999999999346	Net Winnings: 43.833999999999946
+ Win to Loss Ratio: 1.9929980903883446
+Skipped CHF_MNX
+
+Skipped CHF_NOK
+
+Skipped CHF_PLN
+
+Skipped CHF_SEK
+
+Skipped CHF_SGD
+
+Skipped CHF_TRY
+
+Ticker: CHF_ZAR 
+Loss Count: 38	Win Count: 14
+ Net Loss: -49.74496000000056	Net Winnings: 32.4946299999998
+ Win to Loss Ratio: 0.6532245678758096
+Skipped DKK_CZK
+
+Skipped DKK_HKD
+
+Skipped DKK_HUF
+
+Skipped DKK_MXN
+
+Skipped DKK_NOK
+
+Skipped DKK_PLN
+
+Skipped DKK_SEK
+
+Skipped DKK_SGD
+
+Skipped DKK_ZAR
+
+Ticker: EUR_AUD 
+Loss Count: 34	Win Count: 26
+ Net Loss: -32.306659999999965	Net Winnings: 36.77190000000007
+ Win to Loss Ratio: 1.1382142257974088
+Ticker: EUR_CAD 
+Loss Count: 9	Win Count: 3
+ Net Loss: -5.293589999999995	Net Winnings: 4.156129999999848
+ Win to Loss Ratio: 0.7851250285722643
+Ticker: EUR_CHF 
+Loss Count: 31	Win Count: 15
+ Net Loss: -20.261390000000688	Net Winnings: 22.551440000000184
+ Win to Loss Ratio: 1.1130253156372498
+Skipped EUR_CNH
+
+Ticker: EUR_CZK 
+Loss Count: 37	Win Count: 14
+ Net Loss: -36.057449999999335	Net Winnings: 12.89819
+ Win to Loss Ratio: 0.35771220649270086
+Ticker: EUR_DKK 
+Loss Count: 21	Win Count: 14
+ Net Loss: -1.1778599999997823	Net Winnings: 1.1738399999999274
+ Win to Loss Ratio: 0.9965870307168461
+Ticker: EUR_GBP 
+Loss Count: 8	Win Count: 5
+ Net Loss: -9.603079999999977	Net Winnings: 11.083499999999958
+ Win to Loss Ratio: 1.1541609566930593
+Ticker: EUR_HKD 
+Loss Count: 2	Win Count: 3
+ Net Loss: -4.200800000000186	Net Winnings: 10.936239999999884
+ Win to Loss Ratio: 2.6033707865167113
+Ticker: EUR_HUF 
+Loss Count: 16	Win Count: 21
+ Net Loss: -16.84400000000005	Net Winnings: 18.499999999999886
+ Win to Loss Ratio: 1.0983139396817758
+Ticker: EUR_JPY 
+Loss Count: 11	Win Count: 9
+ Net Loss: -20.048000000000684	Net Winnings: 32.388999999999896
+ Win to Loss Ratio: 1.6155726256982637
+Skipped EUR_MXN
+
+Ticker: EUR_NOK 
+Loss Count: 1	Win Count: 1
+ Net Loss: -4.235439999999812	Net Winnings: 2.011440000000107
+ Win to Loss Ratio: 0.4749069754264483
+Ticker: EUR_NZD 
+Loss Count: 8	Win Count: 5
+ Net Loss: -12.905540000000201	Net Winnings: 9.351620000000025
+ Win to Loss Ratio: 0.7246205892973002
+Ticker: EUR_PLN 
+Loss Count: 1	Win Count: 0
+ Net Loss: -1.9595999999999094	Net Winnings: 0
+ Win to Loss Ratio: 0.0
+Skipped EUR_RUB
+
+Ticker: EUR_SEK 
+Loss Count: 11	Win Count: 13
+ Net Loss: -10.25044000000014	Net Winnings: 26.12505999999962
+ Win to Loss Ratio: 2.548676934843701
+Ticker: EUR_SGD 
+Loss Count: 31	Win Count: 23
+ Net Loss: -20.910339999999792	Net Winnings: 20.438620000000014
+ Win to Loss Ratio: 0.9774408259263224
+Ticker: EUR_TRY 
+Loss Count: 0	Win Count: 1
+ Net Loss: 0	Net Winnings: 16.049759999999992
+ Win to Loss Ratio: inf
+Ticker: EUR_USD 
+Loss Count: 3	Win Count: 5
+ Net Loss: -4.8256000000000085	Net Winnings: 11.630879999999934
+ Win to Loss Ratio: 2.4102453580901675
+Ticker: EUR_ZAR 
+Loss Count: 19	Win Count: 10
+ Net Loss: -38.99763000000041	Net Winnings: 10.114090000000033
+ Win to Loss Ratio: 0.25935140161081394
+Ticker: GBP_AUD 
+Loss Count: 27	Win Count: 23
+ Net Loss: -23.507869999999798	Net Winnings: 25.983320000000276
+ Win to Loss Ratio: 1.1053030325589048
+Ticker: GBP_CAD 
+Loss Count: 5	Win Count: 3
+ Net Loss: -3.1521600000000944	Net Winnings: 0.8227200000002313
+ Win to Loss Ratio: 0.26100197959501
+Ticker: GBP_CHF 
+Loss Count: 39	Win Count: 20
+ Net Loss: -26.511800000000108	Net Winnings: 24.34275000000025
+ Win to Loss Ratio: 0.9181854872170185
+Skipped GBP_CNH
+
+Skipped GBP_CZK
+
+Skipped GBP_DKK
+
+Ticker: GBP_HKD 
+Loss Count: 0	Win Count: 1
+ Net Loss: 0	Net Winnings: 7.5190000000000055
+ Win to Loss Ratio: inf
+Skipped GBP_HUF
+
+Ticker: GBP_JPY 
+Loss Count: 15	Win Count: 15
+ Net Loss: -32.89800000000014	Net Winnings: 50.934000000000424
+ Win to Loss Ratio: 1.548240014590559
+Skipped GBP_MXN
+
+Skipped GBP_NOK
+
+Ticker: GBP_NZD 
+Loss Count: 13	Win Count: 14
+ Net Loss: -17.37173999999993	Net Winnings: 19.981459999999743
+ Win to Loss Ratio: 1.150227898874829
+Ticker: GBP_PLN 
+Loss Count: 28	Win Count: 18
+ Net Loss: -22.353540000000066	Net Winnings: 18.093080000000214
+ Win to Loss Ratio: 0.8094055796084271
+Skipped GBP_SEK
+
+Ticker: GBP_SGD 
+Loss Count: 11	Win Count: 19
+ Net Loss: -10.445739999999773	Net Winnings: 14.222529999999665
+ Win to Loss Ratio: 1.36156270403054
+Ticker: GBP_USD 
+Loss Count: 26	Win Count: 27
+ Net Loss: -19.780020000000036	Net Winnings: 29.268139999999903
+ Win to Loss Ratio: 1.4796820225661982
+Ticker: GBP_ZAR 
+Loss Count: 12	Win Count: 6
+ Net Loss: -34.53846000000067	Net Winnings: 7.841479999999933
+ Win to Loss Ratio: 0.2270361793779972
+Skipped JPY_CZK
+
+Skipped JPY_DKK
+
+Skipped JPY_HKD
+
+Skipped JPY_HUF
+
+Skipped JPY_MXN
+
+Skipped JPY_NOK
+
+Skipped JPY_PLN
+
+Skipped JPY_SEK
+
+Skipped JPY_SGD
+
+Skipped JPY_ZAR
+
+Skipped NOK_CZK
+
+Skipped NOK_HKD
+
+Skipped NOK_HUF
+
+Skipped NOK_MXN
+
+Skipped NOK_PLN
+
+Skipped NOK_SEK
+
+Skipped NOK_SGD
+
+Skipped NOK_ZAR
+
+Ticker: NZD_CAD 
+Loss Count: 30	Win Count: 15
+ Net Loss: -26.447509999999852	Net Winnings: 22.76881000000037
+ Win to Loss Ratio: 0.8609056202266488
+Ticker: NZD_CHF 
+Loss Count: 40	Win Count: 24
+ Net Loss: -37.14542999999969	Net Winnings: 27.34483
+ Win to Loss Ratio: 0.7361559685807979
+Skipped NZD_CZK
+
+Skipped NZD_DKK
+
+Ticker: NZD_HKD 
+Loss Count: 29	Win Count: 14
+ Net Loss: -29.327839999999583	Net Winnings: 31.10340999999994
+ Win to Loss Ratio: 1.060542133344985
+Skipped NZD_HUF
+
+Ticker: NZD_JPY 
+Loss Count: 7	Win Count: 6
+ Net Loss: -8.712000000000103	Net Winnings: 28.691999999999894
+ Win to Loss Ratio: 3.293388429752015
+Skipped NZD_MXN
+
+Skipped NZD_NOK
+
+Skipped NZD_PLN
+
+Skipped NZD_SEK
+
+Ticker: NZD_SGD 
+Loss Count: 38	Win Count: 20
+ Net Loss: -32.768060000000105	Net Winnings: 27.237579999999753
+ Win to Loss Ratio: 0.8312234535703262
+Ticker: NZD_USD 
+Loss Count: 36	Win Count: 14
+ Net Loss: -32.70080000000007	Net Winnings: 37.81516999999985
+ Win to Loss Ratio: 1.1563989260201515
+Skipped NZD_ZAR
+
+Ticker: USD_CAD 
+Loss Count: 23	Win Count: 7
+ Net Loss: -27.72297999999978	Net Winnings: 17.06369000000018
+ Win to Loss Ratio: 0.6155070630935172
+Ticker: USD_CHF 
+Loss Count: 27	Win Count: 19
+ Net Loss: -31.135989999999993	Net Winnings: 19.78648000000021
+ Win to Loss Ratio: 0.6354858156108162
+Ticker: USD_CNH 
+Loss Count: 5	Win Count: 5
+ Net Loss: -2.572300000000155	Net Winnings: 6.0218499999998585
+ Win to Loss Ratio: 2.341037204058429
+Ticker: USD_DKK 
+Loss Count: 11	Win Count: 6
+ Net Loss: -29.56176000000005	Net Winnings: 18.645120000000247
+ Win to Loss Ratio: 0.6307175215548809
+Ticker: USD_HKD 
+Loss Count: 20	Win Count: 31
+ Net Loss: -0.5372099999993907	Net Winnings: 0.8204200000008086
+ Win to Loss Ratio: 1.5271867612325518
+Ticker: USD_HUF 
+Loss Count: 31	Win Count: 12
+ Net Loss: -54.75800000000004	Net Winnings: 30.827999999999975
+ Win to Loss Ratio: 0.562986230322509
+Ticker: USD_JPY 
+Loss Count: 13	Win Count: 7
+ Net Loss: -14.867999999999824	Net Winnings: 18.325999999999794
+ Win to Loss Ratio: 1.2325800376647842
+Ticker: USD_MXN 
+Loss Count: 48	Win Count: 16
+ Net Loss: -57.682509999998956	Net Winnings: 23.76308000000006
+ Win to Loss Ratio: 0.4119633490290296
+Ticker: USD_NOK 
+Loss Count: 31	Win Count: 17
+ Net Loss: -56.199249999999665	Net Winnings: 35.70078999999953
+ Win to Loss Ratio: 0.6352538512524587
+Ticker: USD_PLN 
+Loss Count: 17	Win Count: 15
+ Net Loss: -32.477710000000116	Net Winnings: 22.737410000000523
+ Win to Loss Ratio: 0.7000927713191737
+Skipped USD_RUB
+
+Ticker: USD_SEK 
+Loss Count: 29	Win Count: 16
+ Net Loss: -35.62460999999996	Net Winnings: 33.33420000000035
+ Win to Loss Ratio: 0.9357070856354747
+Ticker: USD_SGD 
+Loss Count: 21	Win Count: 17
+ Net Loss: -13.675589999999715	Net Winnings: 14.488960000001043
+ Win to Loss Ratio: 1.0594760445436975
+Ticker: USD_TRY 
+Loss Count: 8	Win Count: 4
+ Net Loss: -8.165559999999914	Net Winnings: 6.892079999999851
+ Win to Loss Ratio: 0.8440425396420972
+Ticker: USD_ZAR 
+Loss Count: 39	Win Count: 20
+ Net Loss: -65.1945500000005	Net Winnings: 30.721419999999284
+ Win to Loss Ratio: 0.4712268126706764

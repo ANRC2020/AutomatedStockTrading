@@ -1,0 +1,290 @@
+
+Ticker: AUD_CAD 
+Loss Count: 50	Win Count: 31
+ Net Loss: -35.90834000000007	Net Winnings: 14.22930000000008
+ Win to Loss Ratio: 0.39626727384223426
+Ticker: AUD_CHF 
+Loss Count: 67	Win Count: 44
+ Net Loss: -57.452299999999354	Net Winnings: 41.8019000000005
+ Win to Loss Ratio: 0.7275931511880459
+Skipped AUD_CNH
+
+Skipped AUD_DKK
+
+Skipped AUD_HUF
+
+Skipped AUS_MXN
+
+Skipped AUD_NOK
+
+Ticker: AUD_NZD 
+Loss Count: 52	Win Count: 30
+ Net Loss: -26.965290000000778	Net Winnings: 16.0131300000005
+ Win to Loss Ratio: 0.5938423061647043
+Skipped AUD_PLN
+
+Skipped AUD_SEK
+
+Ticker: AUD_JPY 
+Loss Count: 24	Win Count: 17
+ Net Loss: -23.902999999999565	Net Winnings: 32.922999999999774
+ Win to Loss Ratio: 1.3773584905660534
+Ticker: AUD_SGD 
+Loss Count: 13	Win Count: 8
+ Net Loss: -14.375420000000076	Net Winnings: 13.446939999999813
+ Win to Loss Ratio: 0.9354119740501315
+Ticker: AUD_USD 
+Loss Count: 43	Win Count: 38
+ Net Loss: -40.19554000000096	Net Winnings: 42.0000200000012
+ Win to Loss Ratio: 1.044892542804505
+Skipped AUD_ZAR
+
+Ticker: CAD_CHF 
+Loss Count: 55	Win Count: 41
+ Net Loss: -30.08282999999949	Net Winnings: 34.53364999999985
+ Win to Loss Ratio: 1.1479521707233142
+Skipped CAD_CNH
+
+Skipped CAD_CZK
+
+Skipped CAD_DKK
+
+Ticker: CAD_HKD 
+Loss Count: 49	Win Count: 52
+ Net Loss: -22.177480000000173	Net Winnings: 29.781249999999545
+ Win to Loss Ratio: 1.342859964251994
+Skipped CAD_HUF
+
+Ticker: CAD_JPY 
+Loss Count: 21	Win Count: 22
+ Net Loss: -24.549999999999272	Net Winnings: 47.94999999999993
+ Win to Loss Ratio: 1.9531568228106457
+Skipped CAD_MXN
+
+Skipped CAD_NOK
+
+Skipped CAD_PLN
+
+Skipped CAD_SEK
+
+Ticker: CAD_SGD 
+Loss Count: 59	Win Count: 51
+ Net Loss: -14.433990000000222	Net Winnings: 23.809389999999667
+ Win to Loss Ratio: 1.6495362682113055
+Skipped CAD_ZAR
+
+Skipped CHF_CNH
+
+Skipped CHF_CZK
+
+Skipped CHF_DKK
+
+Ticker: CHF_HKD 
+Loss Count: 70	Win Count: 49
+ Net Loss: -32.53435000000127	Net Winnings: 28.8582100000001
+ Win to Loss Ratio: 0.887007424460577
+Skipped CHF_HUF
+
+Ticker: CHF_JPY 
+Loss Count: 56	Win Count: 44
+ Net Loss: -33.08200000000079	Net Winnings: 57.78300000000138
+ Win to Loss Ratio: 1.7466598150051387
+Skipped CHF_MNX
+
+Skipped CHF_NOK
+
+Skipped CHF_PLN
+
+Skipped CHF_SEK
+
+Skipped CHF_SGD
+
+Skipped CHF_TRY
+
+Skipped CHF_ZAR
+
+Skipped DKK_CZK
+
+Skipped DKK_HKD
+
+Skipped DKK_HUF
+
+Skipped DKK_MXN
+
+Skipped DKK_NOK
+
+Skipped DKK_PLN
+
+Skipped DKK_SEK
+
+Skipped DKK_SGD
+
+Skipped DKK_ZAR
+
+Skipped EUR_AUD
+
+Skipped EUR_CAD
+
+Skipped EUR_CHF
+
+Skipped EUR_CNH
+
+Skipped EUR_CZK
+
+Skipped EUR_DKK
+
+Skipped EUR_GBP
+
+Skipped EUR_HKD
+
+Skipped EUR_HUF
+
+Skipped EUR_JPY
+
+Skipped EUR_MXN
+
+Skipped EUR_NOK
+
+Skipped EUR_NZD
+
+Skipped EUR_PLN
+
+Skipped EUR_RUB
+
+Skipped EUR_SEK
+
+Skipped EUR_SGD
+
+Skipped EUR_TRY
+
+Skipped EUR_USD
+
+Skipped EUR_ZAR
+
+Skipped GBP_AUD
+
+Skipped GBP_CAD
+
+Skipped GBP_CHF
+
+Skipped GBP_CNH
+
+Skipped GBP_CZK
+
+Skipped GBP_DKK
+
+Skipped GBP_HKD
+
+Skipped GBP_HUF
+
+Skipped GBP_JPY
+
+Skipped GBP_MXN
+
+Skipped GBP_NOK
+
+Skipped GBP_NZD
+
+Skipped GBP_PLN
+
+Skipped GBP_SEK
+
+Skipped GBP_SGD
+
+Skipped GBP_USD
+
+Skipped GBP_ZAR
+
+Skipped JPY_CZK
+
+Skipped JPY_DKK
+
+Skipped JPY_HKD
+
+Skipped JPY_HUF
+
+Skipped JPY_MXN
+
+Skipped JPY_NOK
+
+Skipped JPY_PLN
+
+Skipped JPY_SEK
+
+Skipped JPY_SGD
+
+Skipped JPY_ZAR
+
+Skipped NOK_CZK
+
+Skipped NOK_HKD
+
+Skipped NOK_HUF
+
+Skipped NOK_MXN
+
+Skipped NOK_PLN
+
+Skipped NOK_SEK
+
+Skipped NOK_SGD
+
+Skipped NOK_ZAR
+
+Skipped NZD_CAD
+
+Skipped NZD_CHF
+
+Skipped NZD_CZK
+
+Skipped NZD_DKK
+
+Skipped NZD_HKD
+
+Skipped NZD_HUF
+
+Skipped NZD_JPY
+
+Skipped NZD_MXN
+
+Skipped NZD_NOK
+
+Skipped NZD_PLN
+
+Skipped NZD_SEK
+
+Skipped NZD_SGD
+
+Skipped NZD_USD
+
+Skipped NZD_ZAR
+
+Skipped USD_CAD
+
+Skipped USD_CHF
+
+Skipped USD_CNH
+
+Skipped USD_DKK
+
+Skipped USD_HKD
+
+Skipped USD_HUF
+
+Skipped USD_JPY
+
+Skipped USD_MXN
+
+Skipped USD_NOK
+
+Skipped USD_PLN
+
+Skipped USD_RUB
+
+Skipped USD_SEK
+
+Skipped USD_SGD
+
+Skipped USD_TRY
+
+Skipped USD_ZAR
